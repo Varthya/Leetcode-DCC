@@ -1,0 +1,35 @@
+ Arrays.sort(hand);
+
+         int n=hand.length;
+      int x=groupSize;
+        if(n%x!=0)
+          return false;
+
+        int vis[]=new int [n];
+          for(int i=0;i<n;i++)
+          {
+              if(vis[i]==0)
+              {
+                vis[i]=1;
+                int num=hand[i];
+                int count=1;
+                for(int j=0;j<n;j++)
+                {
+                    if(num+1==hand[j]&&vis[j]==0)
+                    {
+                        count++;
+                        num=hand[j];
+                        vis[j]=1;
+                        
+                    }
+                    if(count==x)
+                       {
+                        break;
+                       }
+                }
+                if(count!=x)return false;
+
+              }
+          }
+          return true;
+        
