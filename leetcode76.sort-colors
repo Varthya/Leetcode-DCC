@@ -1,0 +1,28 @@
+ int zero_left=0;
+      int one_mid=0;
+      int two_end=nums.length-1;
+      while(one_mid<=two_end)
+      {
+        if(nums[one_mid]==0)
+        {
+            
+            int x=nums[zero_left];
+             nums[zero_left]=nums[one_mid];
+              nums[one_mid]=x;
+            one_mid++;
+            zero_left++;
+        }
+        else if(nums[one_mid]==1)
+        {
+           one_mid++;
+        }
+        else
+        {  
+             int x=nums[two_end];
+             nums[two_end]=nums[one_mid];
+              nums[one_mid]=x;
+              two_end--;
+        }
+      }
+      return ;
+
